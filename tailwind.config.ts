@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        heading: ['Montserrat', 'sans-serif'],
+        body: ['Open Sans', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -46,6 +50,15 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        logistics: {
+          blue: "hsl(var(--logistics-blue))",
+          "blue-dark": "hsl(var(--logistics-blue-dark))",
+          "blue-light": "hsl(var(--logistics-blue-light))",
+          yellow: "hsl(var(--logistics-yellow))",
+          "yellow-light": "hsl(var(--logistics-yellow-light))",
+          gold: "hsl(var(--logistics-gold))",
+          navy: "hsl(var(--logistics-navy))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
