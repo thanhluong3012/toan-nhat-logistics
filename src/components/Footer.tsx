@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import logoToannhat from "@/assets/logo-toannhat.png";
 
 const Footer = () => {
   return (
@@ -7,14 +8,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="h-10 w-10 rounded-lg bg-logistics-yellow flex items-center justify-center">
-                <span className="font-heading font-black text-logistics-navy text-lg">TN</span>
-              </div>
-              <div>
-                <span className="font-heading font-bold text-lg block">TOÀN NHẤT</span>
-                <span className="text-[10px] tracking-[0.2em] text-primary-foreground/60 font-semibold uppercase">Logistics</span>
-              </div>
+            <div className="mb-4">
+              <img src={logoToannhat} alt="Toàn Nhất Logistics" className="h-12 brightness-0 invert" />
             </div>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               16 năm kinh nghiệm trong lĩnh vực vận tải và kho bãi. Đối tác đáng tin cậy cho mọi doanh nghiệp.
