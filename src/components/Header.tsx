@@ -1,20 +1,21 @@
 import { useState } from "react";
 import { Menu, X, Phone, Mail, Clock, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 import logoToannhat from "@/assets/logo-toannhat.png";
 
 const navItems = [
-  { title: "Vận tải đường bộ", href: "#road-transport" },
-  { title: "Vận tải đường sắt", href: "#rail-transport" },
-  { title: "Kho cho thuê", href: "#warehouse" },
-  { title: "Tin tức & Chính sách", href: "#news-policy" },
-  { title: "Về Toàn Nhất Logistics", href: "#about" },
+  { title: "Vận tải đường bộ", href: "/van-tai-duong-bo" },
+  { title: "Vận tải đường sắt", href: "/van-tai-duong-sat" },
+  { title: "Kho cho thuê", href: "/kho-cho-thue" },
+  { title: "Tin tức & Chính sách", href: "/tin-tuc-chinh-sach" },
+  { title: "Về Toàn Nhất Logistics", href: "/ve-chung-toi" },
 ];
 
 const topNavItems = [
-  { title: "Tin tức", href: "#news" },
-  { title: "Dịch vụ", href: "#services" },
-  { title: "Chính sách", href: "#policy" },
+  { title: "Tin tức", href: "/tin-tuc-chinh-sach" },
+  { title: "Dịch vụ", href: "/van-tai-duong-bo" },
+  { title: "Chính sách", href: "/tin-tuc-chinh-sach" },
 ];
 
 const Header = () => {
