@@ -1,20 +1,21 @@
 import { useState } from "react";
 import { Menu, X, Phone, Mail, Clock, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 import logoToannhat from "@/assets/logo-toannhat.png";
 
 const navItems = [
-  { title: "Vận tải đường bộ", href: "#road-transport" },
-  { title: "Vận tải đường sắt", href: "#rail-transport" },
-  { title: "Kho cho thuê", href: "#warehouse" },
-  { title: "Tin tức & Chính sách", href: "#news-policy" },
-  { title: "Về Toàn Nhất Logistics", href: "#about" },
+  { title: "Vận tải đường bộ", href: "/van-tai-duong-bo" },
+  { title: "Vận tải đường sắt", href: "/van-tai-duong-sat" },
+  { title: "Kho cho thuê", href: "/kho-cho-thue" },
+  { title: "Tin tức & Chính sách", href: "/tin-tuc-chinh-sach" },
+  { title: "Về Toàn Nhất Logistics", href: "/ve-chung-toi" },
 ];
 
 const topNavItems = [
-  { title: "Tin tức", href: "#news" },
-  { title: "Dịch vụ", href: "#services" },
-  { title: "Chính sách", href: "#policy" },
+  { title: "Tin tức", href: "/tin-tuc-chinh-sach" },
+  { title: "Dịch vụ", href: "/van-tai-duong-bo" },
+  { title: "Chính sách", href: "/tin-tuc-chinh-sach" },
 ];
 
 const Header = () => {
@@ -86,20 +87,20 @@ const Header = () => {
       <nav className="bg-card shadow-md border-b border-border">
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
           {/* Logo */}
-          <a href="#" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img src={logoToannhat} alt="Toàn Nhất Logistics" className="h-12 object-contain" />
-          </a>
+          </Link>
 
           {/* Desktop nav - Center */}
           <ul className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
               <li key={item.title}>
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className="px-5 py-2 text-sm font-semibold text-foreground hover:text-primary transition-colors"
                 >
                   {item.title}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -152,13 +153,13 @@ const Header = () => {
               <ul className="px-4 py-3 space-y-1">
                 {navItems.map((item) => (
                   <li key={item.title}>
-                    <a
-                      href={item.href}
+                    <Link
+                      to={item.href}
                       className="block px-4 py-2.5 rounded-md text-sm font-medium text-foreground hover:text-primary hover:bg-accent transition-colors"
                       onClick={() => setMobileOpen(false)}
                     >
                       {item.title}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
