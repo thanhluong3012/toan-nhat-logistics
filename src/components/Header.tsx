@@ -153,13 +153,13 @@ const Header = () => {
               <ul className="px-4 py-3 space-y-1">
                 {navItems.map((item) => (
                   <li key={item.title}>
-                    <a
-                      href={item.href}
+                    <Link
+                      to={item.href}
                       className="block px-4 py-2.5 rounded-md text-sm font-medium text-foreground hover:text-primary hover:bg-accent transition-colors"
                       onClick={() => setMobileOpen(false)}
                     >
                       {item.title}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
