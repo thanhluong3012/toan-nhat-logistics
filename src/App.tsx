@@ -1,8 +1,9 @@
+import React, { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import RoadTransport from "./pages/RoadTransport";
@@ -15,12 +16,9 @@ const queryClient = new QueryClient();
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-  React.useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
   return null;
 };
-
-import React from "react";
-import { useLocation } from "react-router-dom";
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -36,7 +34,6 @@ const App = () => (
           <Route path="/kho-cho-thue" element={<Warehouse />} />
           <Route path="/tin-tuc-chinh-sach" element={<NewsPolicy />} />
           <Route path="/ve-chung-toi" element={<About />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
