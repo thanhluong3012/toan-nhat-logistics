@@ -87,9 +87,9 @@ const Header = () => {
       <nav className="bg-card shadow-md border-b border-border">
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
           {/* Logo */}
-          <a href="#" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img src={logoToannhat} alt="Toàn Nhất Logistics" className="h-12 object-contain" />
-          </a>
+          </Link>
 
           {/* Desktop nav - Center */}
           <ul className="hidden lg:flex items-center gap-1">
