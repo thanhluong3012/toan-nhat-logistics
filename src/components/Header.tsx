@@ -95,12 +95,12 @@ const Header = () => {
           <ul className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
               <li key={item.title}>
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className="px-5 py-2 text-sm font-semibold text-foreground hover:text-primary transition-colors"
                 >
                   {item.title}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
