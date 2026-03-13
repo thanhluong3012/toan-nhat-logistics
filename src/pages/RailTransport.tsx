@@ -49,7 +49,7 @@ const RailTransport = () => {
       <Header />
 
       {/* Hero - Centered with counter overlay at bottom */}
-      <section className="relative min-h-[75vh] overflow-hidden flex items-center">
+      <section className="relative min-h-[85vh] overflow-hidden flex items-center">
         <img src={heroImg} alt="Vận tải đường sắt" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-logistics-navy/80" />
         
