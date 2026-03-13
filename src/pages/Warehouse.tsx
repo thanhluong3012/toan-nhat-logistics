@@ -44,57 +44,64 @@ const Warehouse = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero - Side-by-side with image + gradient overlay */}
-      <section className="relative overflow-hidden">
-        <div className="grid lg:grid-cols-2 min-h-[65vh]">
-          {/* Left - Content */}
-          <div className="bg-gradient-hero flex items-center order-2 lg:order-1">
+      {/* Hero - Full-bleed background with glassmorphism stats */}
+      <section className="relative min-h-[75vh] flex items-center overflow-hidden">
+        <img src={heroImg} alt="Kho bãi Toàn Nhất" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/50 to-foreground/80" />
+        
+        <div className="container mx-auto px-4 relative z-10 py-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="max-w-2xl"
+          >
+            <div className="inline-flex items-center gap-2 bg-secondary/20 backdrop-blur-sm border border-secondary/30 px-4 py-1.5 rounded-full mb-6">
+              <WarehouseIcon className="h-4 w-4 text-secondary" />
+              <span className="text-secondary text-sm font-medium">Hệ thống kho hiện đại</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-black text-primary-foreground mb-6 font-heading leading-tight">
+              Kho Cho Thuê<br />
+              <span className="text-secondary">Toàn Quốc</span>
+            </h1>
+            
+            <p className="text-primary-foreground/80 text-lg leading-relaxed mb-8 max-w-xl">
+              Hệ thống kho bãi hiện đại hơn 55.000m² trên toàn quốc. Đa dạng loại hình kho, đáp ứng mọi nhu cầu lưu trữ hàng hóa.
+            </p>
+
+            <a href="#warehouse-types" className="bg-secondary hover:bg-logistics-gold text-secondary-foreground font-bold px-8 py-3.5 rounded-xl transition-colors inline-block">
+              Xem Loại Hình Kho
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Floating glassmorphism stat cards */}
+        <div className="absolute bottom-0 left-0 right-0 z-10">
+          <div className="container mx-auto px-4">
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="px-8 md:px-16 py-16 max-w-xl ml-auto"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="grid grid-cols-3 gap-4 -mb-12"
             >
-              <div className="inline-flex items-center gap-2 bg-primary-foreground/10 border border-primary-foreground/20 px-4 py-1.5 rounded-full mb-6">
-                <WarehouseIcon className="h-4 w-4 text-secondary" />
-                <span className="text-primary-foreground text-sm font-medium">Hệ thống kho hiện đại</span>
-              </div>
-              
-              <h1 className="text-4xl md:text-5xl font-black text-primary-foreground mb-6 font-heading leading-tight">
-                Kho Cho Thuê<br />
-                <span className="text-secondary">Toàn Quốc</span>
-              </h1>
-              
-              <p className="text-primary-foreground/80 text-lg leading-relaxed mb-8">
-                Hệ thống kho bãi hiện đại hơn 55.000m² trên toàn quốc. Đa dạng loại hình kho, đáp ứng mọi nhu cầu lưu trữ hàng hóa.
-              </p>
-
-              <div className="flex flex-wrap gap-6 mb-8">
-                {[
-                  { num: "55.000", unit: "m²", label: "Tổng diện tích" },
-                  { num: "14", unit: "+", label: "Điểm kho" },
-                  { num: "4", unit: "", label: "Tỉnh thành" },
-                ].map((s) => (
-                  <div key={s.label}>
-                    <div className="text-2xl font-black text-secondary font-heading">{s.num}<span className="text-lg">{s.unit}</span></div>
-                    <div className="text-xs text-primary-foreground/60">{s.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              <a href="#warehouse-types" className="bg-secondary hover:bg-logistics-gold text-secondary-foreground font-bold px-8 py-3.5 rounded-xl transition-colors inline-block">
-                Xem Loại Hình Kho
-              </a>
+              {[
+                { num: "55.000", unit: "m²", label: "Tổng diện tích" },
+                { num: "14+", unit: "", label: "Điểm kho" },
+                { num: "4", unit: "", label: "Tỉnh thành" },
+              ].map((s) => (
+                <div key={s.label} className="bg-card/80 backdrop-blur-md border border-border/50 rounded-2xl p-5 text-center shadow-lg">
+                  <div className="text-2xl md:text-3xl font-black text-primary font-heading">{s.num}<span className="text-lg">{s.unit}</span></div>
+                  <div className="text-xs text-muted-foreground mt-1">{s.label}</div>
+                </div>
+              ))}
             </motion.div>
-          </div>
-
-          {/* Right - Image */}
-          <div className="relative order-1 lg:order-2 min-h-[300px]">
-            <img src={heroImg} alt="Kho bãi" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-logistics-navy/30 to-transparent lg:hidden" />
           </div>
         </div>
       </section>
+
+      {/* Spacer for floating cards */}
+      <div className="h-16" />
 
       {/* Warehouse Types - Tabbed cards */}
       <section id="warehouse-types" className="py-20">
