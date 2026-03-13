@@ -33,11 +33,11 @@ const ContactFormDialog = ({ open, onClose }: ContactFormDialogProps) => {
             onClick={onClose}
           />
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 40 }}
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 40 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[900px] md:max-h-[90vh] bg-card rounded-2xl shadow-2xl z-[101] overflow-auto"
+            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] max-w-[900px] max-h-[90vh] bg-card rounded-2xl shadow-2xl z-[101] overflow-y-auto"
           >
             {submitted ? (
               <div className="flex flex-col items-center justify-center p-12 text-center min-h-[400px]">
